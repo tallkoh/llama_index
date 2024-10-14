@@ -40,11 +40,14 @@ you should give a score between 2 and 3.
 - If the generated answer is relevant and fully correct, \
 you should give a score between 4 and 5.
 
-Example Response:
-4.0
-The generated answer has the exact same metrics as the reference answer, \
-    but it is not as concise.
+**Provide your evaluation in the following format:**
 
+<score>
+<reasoning>
+
+**Example Response:**
+4.0
+The generated answer has the exact same metrics as the reference answer, but it is not as concise.
 """
 
 DEFAULT_USER_TEMPLATE = """

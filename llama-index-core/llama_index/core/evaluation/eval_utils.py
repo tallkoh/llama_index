@@ -228,12 +228,22 @@ def default_parser(eval_response: str) -> Tuple[Optional[float], Optional[str]]:
         # Return None or default values if the response is empty
         return None, "No response"
 
-    score_str, reasoning_str = eval_response.split("\n", 1)
+    if "\n" in eval_response:
+        split_result = eval_response.split("\n", 1)
+    else:
+        split_result = [eval_response]
+
+
+    if len(split_result) == 2:
+        score_str, reasoning = split_result
+        reasoning = reasoning.lstrip("\n")
+    else:
+        score_str = split_result[0]
+        reasoning = ""
 
     try:
         score = float(score_str)
     except ValueError:
         score = None
 
-    reasoning = reasoning_str.lstrip("\n")
     return score, reasoning
