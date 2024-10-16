@@ -1,3 +1,4 @@
+import asyncio
 import json
 from typing import TYPE_CHECKING, Any, Dict, List, Optional, Sequence, Union
 from zhipuai import ZhipuAI as ZhipuAIClient
@@ -79,7 +80,7 @@ class ZhipuAI(FunctionCallingLLM):
         `pip install llama-index-llms-zhipuai`
 
         ```python
-        from llama_index.llms.zhipuai import zhipuai
+        from llama_index.llms.zhipuai import ZhipuAI
 
         llm = ZhipuAI(model="glm-4", api_key="YOUR API KEY")
 
